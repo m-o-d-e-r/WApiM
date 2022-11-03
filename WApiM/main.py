@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from apps.random.app import random_app
-from apps.weather.app import weather_app
+from .apps.random.app import random_app
+from .apps.weather.app import weather_app
 
 
 app = FastAPI()

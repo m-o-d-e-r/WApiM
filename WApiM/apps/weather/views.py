@@ -9,9 +9,10 @@ from .models import (
     ResponseCityData,
     ResponseWeather
 )
+from .apikey import API_KEY
 
 
-owm_object = OWM("67cec42b4ac92cb28ee8999242b3a14b")
+owm_object = OWM(API_KEY)
 owm_manager = owm_object.weather_manager()
 
 
