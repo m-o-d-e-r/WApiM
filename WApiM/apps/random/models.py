@@ -12,6 +12,9 @@ class ResponseRandom(BaseModel):
     number: int | list
 
 
-class ResponseError(BaseModel):
-    info: str
-    data: dict
+class RequestRandomWeatherNumber(BaseModel):
+    count_weather_items: int
+    temperature: bool
+    humidity: bool
+    wind_data: bool
+    operation: str

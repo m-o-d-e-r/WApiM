@@ -12,7 +12,15 @@ def is_valid_list_kwargs(range_len: int | None, sorted_: bool | None) -> tuple[b
     if (not isinstance(range_len, int) and isinstance(sorted_, bool)):
         return (False, "Range len is not defined")
 
-    if (isinstance(range_len, int) and range_len <= 1):
-        return (False, "Range len must be greater that 1")
+    if (isinstance(range_len, int) and range_len < 1):
+        return (False, "Range len must be greater that 0")
 
     return (True, "")
+
+
+
+
+def is_valid_operation(operation: str):
+    __available_op = ("*", "|")
+
+    return operation in __available_op

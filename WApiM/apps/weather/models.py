@@ -3,24 +3,34 @@ from typing import Any
 from pydantic import BaseModel
 
 
-class RequestWeather(BaseModel):
+class RequestWeatherAt(BaseModel):
     city: str | list
     temperature: bool = True
     humidity: bool | None
     wind_data: bool | None
 
 
-class ResponseError(BaseModel):
-    info: str
-    data: dict
-
-
-class ResponseCityData(BaseModel):
+class ResponseCityDataAt(BaseModel):
     city: str
     temperature: Any
     humidity: Any
     wind_data: Any
 
 
-class ResponseWeather(BaseModel):
-    weather: ResponseCityData | list[ResponseCityData]
+class ResponseWeatherAt(BaseModel):
+    weather: ResponseCityDataAt | list[ResponseCityDataAt]
+
+
+
+class RequestWeatherRandom(BaseModel):
+    data_set_len: int
+
+
+class RandomWeatherItem(BaseModel):
+    temperature: Any
+    humidity: Any
+    wind_data: Any
+
+
+class ResponseWeatherRandom(BaseModel):
+    weather: list[RandomWeatherItem]
