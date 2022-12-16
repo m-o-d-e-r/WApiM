@@ -1,0 +1,1 @@
+uvicorn WApiM.main:app

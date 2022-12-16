@@ -2,3 +2,5 @@ __pycache__
 apikey.py
 .env
 .vscode
+test[0-9]*
+arch

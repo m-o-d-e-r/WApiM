@@ -23,6 +23,8 @@ owm_manager = owm_object.weather_manager()
 
 
 async def __get_weather_data(r: RequestWeatherAt, current_city_name: str = "") -> ResponseCityDataAt | str:
+    """Повертає погодні дані в одному із пунктів"""
+
     city_name = r.city if not current_city_name else current_city_name
 
     try:
@@ -42,6 +44,8 @@ async def __get_weather_data(r: RequestWeatherAt, current_city_name: str = "") -
 
 
 async def get_weather_at(r: RequestWeatherAt):
+    """Обробка користувацького запиту та повернення результату у вигляді JSON"""
+
     weather_data: ResponseCityDataAt | list[ResponseCityDataAt] = []
 
     if isinstance(r.city, str):
@@ -67,6 +71,8 @@ async def get_weather_at(r: RequestWeatherAt):
 
 
 async def get_weather_random(r: RequestWeatherRandom):
+    """Поверненя погодних даних у випадковому місці"""
+
     weather_data: list[RandomWeatherItem] = []
 
     if not is_valid_length_value(r.data_set_len):
