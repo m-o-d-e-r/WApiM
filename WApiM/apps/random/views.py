@@ -77,7 +77,6 @@ async def get_weather_number(r: RequestRandomWeatherNumber):
         current_operation = operator.mul
     else:
         current_operation = operator.add
-    operator.iadd
 
 
     random_weather_data_set: ResponseWeatherRandom =  (await get_weather_random(
